@@ -1,0 +1,42 @@
+@import 'vendor/_reset.scss';
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+$thumb-img-height: 170px;
+$thumb-img-width: 280px;
+
+$slide-containerW: 100%;
+$slide-containerH: 300px;
+
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.list-thu{
+	display: block;
+	position: relative;
+}
+
+.itm-thu{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.img-thu{
+	background-color: red;
+	padding: 7px;
+	max-width: $thumb-img-width;
+	max-height: $thumb-img-height;
+}
+
+#sam-div{
+	width: $slide-containerW;
+	height: $slide-containerH;
+	background-color: black;
+}
+
+
