@@ -1,4 +1,6 @@
 import Thumbnail from './thumbnail';
+import moveContainer from './move-container';
+import utils from './utils';
 
 class ListContainer{
 	constructor(){
@@ -13,7 +15,14 @@ class ListContainer{
 		this.container.className = 'list-thu';
 		this.container.id = 'list-con';
 		this.hide();
+
 		this.createList();
+		this.createMovableContainer();
+	}
+
+	createMovableContainer(){
+		this.refMove = moveContainer.getContainer();
+		this.container.appendChild(this.refMove);
 	}
 
 	createList(){
@@ -23,6 +32,7 @@ class ListContainer{
 		for(var i=1, j=0; i<30; i++){
 			url = imgArr[j++];
 			j = (j === (len) ? 0 : j);
+
 			th = new Thumbnail(i, url);
 			this.frag.appendChild(th.getItem());
 		}
@@ -32,12 +42,22 @@ class ListContainer{
 
 	addClick(){
 		this.container.addEventListener('click', (e) => {
-			var clickedLi = e.target.parentNode;
+			var clickedItem = e.target.parentNode;
+
+			if(!utils.validThumbnail(clickedItem))
+				return;
+
+			var myEvent = new CustomEvent("THUMB_CLICKED", {
+				detail: {
+					item: clickedItem,
+					type: clickedItem.tagName,
+					list: this.container
+				}
+			});
+			this.refMove.dispatchEvent(myEvent);
+			myEvent = null;
+			clickedItem = null;
 		});
-	}
-
-	getRowLastEl(el, tagName){
-
 	}
 
 	getContainer(){
