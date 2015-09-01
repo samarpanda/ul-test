@@ -11,6 +11,32 @@ class MoveContainer{
 		this.item.appendChild(slideshow.getItem());
 	}
 
+	createNextPrevButton(){
+		var next = document.createElement('div');
+		next.className = 'next-arrow';
+		this.item.appendChild(next);
+
+		var prev = document.createElement('div');
+		prev.className = 'prev-arrow';
+		this.item.appendChild(prev);
+	}
+
+	prevNextHandler(i){
+		var el;
+		el = i === 1 ? this.getNextEl() : this.getPrevEl();
+		if(el){
+			var thumbClickEvent = new CustomEvent("THUMB_CLICKED", {
+				detail: {
+					item: el,
+					type: el.tagName
+				},
+				bubbles: true,
+				cancelable: false
+			});
+			this.item.dispatchEvent(thumbClickEvent);
+		}
+	}
+
 	init(){
 		this.item = document.createElement(this.type);
 		this.item.className = 'mcon-b';
@@ -30,6 +56,17 @@ class MoveContainer{
 		});
 
 		this.createSlideshow();
+		this.createNextPrevButton();
+
+		this.item.addEventListener('click', (e)=>{
+			var clname = e.target.className;
+			if( clname === 'prev-arrow'
+				|| clname === 'next-arrow'
+			){
+				let i = clname === 'next-arrow' ? 1 : 0;
+				this.prevNextHandler(i);
+			}
+		});
 
 		//Default: Hide the movable container
 		this.hide();
@@ -38,6 +75,18 @@ class MoveContainer{
 	moveItem(el){
 		utils.insertAfter(this.item, el);
 		this.show();
+	}
+
+	getNextEl(){
+		var el = this.activeNode.nextSibling;
+		if(el && el.id === 'mov-con'){
+			el = el.nextSibling;
+		}
+		return el;
+	}
+
+	getPrevEl(node){
+		return this.activeNode.previousSibling;
 	}
 
 	getRowLastEl(node, tagName){

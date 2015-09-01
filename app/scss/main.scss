@@ -33,6 +33,7 @@ body {
 }
 
 .mcon-b{
+	position: relative;
 	width: $slide-containerW;
 	height: $slide-containerH;
 	background-color: black;
@@ -48,9 +49,26 @@ body {
 }
 
 .img-lrg{
-
 	background-color: white;
 	padding: 7px;
 	max-height: $slide-containerH - 40;
+}
+
+.next-arrow{
+	position: absolute;
+	right: 0;
+	top: 125px;
+	background-color: green;
+	width: 50px;
+	height: 50px;
+}
+
+.prev-arrow{
+	position: absolute;
+	left: 0;
+	top: 125px;
+	background-color: green;
+	width: 50px;
+	height: 50px;
 }
 
