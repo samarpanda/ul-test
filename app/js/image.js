@@ -13,7 +13,7 @@ class Image{
 		return `<img class="img-thu" src="${this.getUrl()}" />`;
 	}
 	getLargeImg(){
-		return `<img class="sp" src="${this.getUrl()}" />`;
+		return `<img class="img-lrg" src="${this.getUrl()}" />`;
 	}
 
 }

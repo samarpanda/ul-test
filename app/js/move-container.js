@@ -1,9 +1,14 @@
 import utils from './utils';
+import slideshow from './slideshow';
 class MoveContainer{
 	constructor(){
 		this.type = 'div';
-		this.init();
 		this.activeNode = null;
+		this.init();
+	}
+
+	createSlideshow(){
+		this.item.appendChild(slideshow.getItem());
 	}
 
 	init(){
@@ -20,9 +25,17 @@ class MoveContainer{
 			}
 			this.activeNode = detail.item;
 
+			// var updateImageEvent = new CustomEvent("UPDATE_LARGE_IMAGE", {
+			// 	detail: {
+			// 		sp: "Hello"
+			// 	}
+			// });
+
 			let rowItem = this.getRowLastEl(detail.item, detail.type);
 			this.moveItem(rowItem);
 		});
+
+		this.createSlideshow();
 
 		//Default: Hide the movable container
 		this.hide();
