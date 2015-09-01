@@ -26,7 +26,7 @@ Automatically starts a browser.
 
 ## Run Tests
 
-Test configured for [travis](https://travis-ci.org/samarpanda/ul-test) and [saucelab](https://saucelabs.com/). Saucelabs covers complete browser testing.
+Test configured for [travis CI](https://travis-ci.org/samarpanda/ul-test) and [saucelab](https://saucelabs.com/). Saucelabs covers complete browser testing.
 
 ### Trigger saucelab test
 
@@ -39,3 +39,8 @@ gulp saucelab
 ```
 gulp local-test
 ```
+
+## TODOs
+
+- [ ] Add tests for all modules
+- [ ] Multiple browser support
