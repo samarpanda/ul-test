@@ -11,9 +11,17 @@ var source = require('vinyl-source-stream');
 
 var Kserver = require('karma').Server;
 
-gulp.task('travis-test', function(){
+gulp.task('saucelab', function(){
 	new Kserver({
 		configFile: __dirname + '/karma.conf-ci.js',
+		singleRun: true
+	}).start();
+});
+
+gulp.task('travis-test', function(){
+	new Kserver({
+		configFile: __dirname + '/karma.conf.js',
+		browsers: ['Firefox'],
 		singleRun: true
 	}).start();
 });
