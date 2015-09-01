@@ -79,12 +79,10 @@ gulp.task('clean', function(){
 	return gulp.src(['dist/css', 'dist/js', 'dist/images', 'dist/*.html'], { read: false }).pipe(clean());
 });
 
-/**
- * Configuration isn't included in repo
- */
-gulp.task('single', function(){
+gulp.task('local-test', function(){
 	new Kserver({
 		configFile: __dirname + '/karma.conf-single.js',
+		browsers: ['PhantomJS'],
 		singleRun: true
 	}).start();
 });
