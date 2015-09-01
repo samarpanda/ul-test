@@ -13,7 +13,7 @@ var karma = require('karma').server;
 
 gulp.task('travis-test', function(){
 	karma.start({
-		configFile: _dirname + '',
+		configFile: __dirname + '/karma.conf-ci.js',
 		singleRun: true
 	});
 })

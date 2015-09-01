@@ -106,7 +106,7 @@ module.exports = function(config) {
 	// start these browsers
 	// available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
 	saucelabs: {
-	  testName: 'ES6 tests'
+	  testName: 'UL google search test'
 	},
 	captureTimeout: 120000,
 	customLaunchers: customLaunchers,
