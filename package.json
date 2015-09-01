@@ -4,7 +4,8 @@
   "description": "UL image search google test",
   "main": "index.js",
   "scripts": {
-    "test": "gulp travis-test"
+    "test": "gulp travis-test",
+    "start": "gulp"
   },
   "author": "Samar Panda <samar.panda84@gmail.com> (http://samarpanda.com)",
   "license": "ISC",
