@@ -9,9 +9,10 @@ class Large{
 		this.item.className = 'img-lrg';
 		this.setData('src', this.url);
 
-		this.item.addEventListener('UPDATE_LARGE_IMAGE', (e) => {
+		addEventListener('THUMB_CLICKED', (e)=>{
 			let detail = e.detail;
-			console.log(detail);
+			let item = detail.item;
+			this.setData('src', item.getAttribute('data-url'));
 		});
 	}
 

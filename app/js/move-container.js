@@ -25,12 +25,6 @@ class MoveContainer{
 			}
 			this.activeNode = detail.item;
 
-			// var updateImageEvent = new CustomEvent("UPDATE_LARGE_IMAGE", {
-			// 	detail: {
-			// 		sp: "Hello"
-			// 	}
-			// });
-
 			let rowItem = this.getRowLastEl(detail.item, detail.type);
 			this.moveItem(rowItem);
 		});

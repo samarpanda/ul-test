@@ -7,7 +7,7 @@ class Slideshow{
 
 	init(){
 		this.item = document.createElement(this.type);
-		this.item.className = '';
+		this.item.className = 'slides';
 		this.item.appendChild(large.getItem());
 	}
 

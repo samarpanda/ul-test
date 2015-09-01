@@ -51,7 +51,9 @@ class ListContainer{
 				detail: {
 					item: clickedItem,
 					type: clickedItem.tagName
-				}
+				},
+				bubbles: true,
+				cancelable: false
 			});
 			this.refMove.dispatchEvent(thumbClickEvent);
 			thumbClickEvent = null;
