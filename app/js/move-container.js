@@ -75,6 +75,9 @@ class MoveContainer{
 	moveItem(el){
 		utils.insertAfter(this.item, el);
 		this.show();
+		var h = document.documentElement.clientHeight || window.innerHeight;
+		h = this.item.offsetTop - (h - 300)/2;
+		document.body.scrollTop = h;
 	}
 
 	getNextEl(){
