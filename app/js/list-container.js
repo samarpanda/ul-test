@@ -47,15 +47,14 @@ class ListContainer{
 			if(!utils.validThumbnail(clickedItem))
 				return;
 
-			var myEvent = new CustomEvent("THUMB_CLICKED", {
+			var thumbClickEvent = new CustomEvent("THUMB_CLICKED", {
 				detail: {
 					item: clickedItem,
-					type: clickedItem.tagName,
-					list: this.container
+					type: clickedItem.tagName
 				}
 			});
-			this.refMove.dispatchEvent(myEvent);
-			myEvent = null;
+			this.refMove.dispatchEvent(thumbClickEvent);
+			thumbClickEvent = null;
 			clickedItem = null;
 		});
 	}

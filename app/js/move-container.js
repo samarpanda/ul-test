@@ -3,7 +3,7 @@ class MoveContainer{
 	constructor(){
 		this.type = 'div';
 		this.init();
-		this.prevNode = null;
+		this.activeNode = null;
 	}
 
 	init(){
@@ -13,20 +13,22 @@ class MoveContainer{
 
 		this.item.addEventListener('THUMB_CLICKED', (e) => {
 			let detail = e.detail;
-			let lastRowItem = this.getRowLastEl(detail.item, detail.type);
-
-			if(this.preNode === lastRowItem){
+			// Toggle
+			if(this.activeNode === detail.item){
 				this.toggle();
 				return;
 			}
-			this.moveItem(lastRowItem);
+			this.activeNode = detail.item;
+
+			let rowItem = this.getRowLastEl(detail.item, detail.type);
+			this.moveItem(rowItem);
 		});
 
+		//Default: Hide the movable container
 		this.hide();
 	}
 
 	moveItem(el){
-		this.preNode = el;
 		utils.insertAfter(this.item, el);
 		this.show();
 	}
