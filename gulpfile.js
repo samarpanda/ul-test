@@ -9,14 +9,21 @@ var babelify = require('babelify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 
-var karma = require('karma').server;
+var Kserver = require('karma').Server;
 
 gulp.task('travis-test', function(){
-	karma.start({
+	new Kserver({
 		configFile: __dirname + '/karma.conf-ci.js',
 		singleRun: true
-	});
-})
+	}).start();
+});
+
+gulp.task('single', function(){
+	new Kserver({
+		configFile: __dirname + '/karma.conf-single.js',
+		singleRun: true
+	}).start();
+});
 
 gulp.task('default', ['serve'], function(){});
 

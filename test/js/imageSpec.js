@@ -5,7 +5,9 @@ describe('image.js test', function(){
 	let blankThumbnailImg = '<img class="img-thu" src="" />';
 	let thumbnailImg = `<img class="img-thu" src="${url}" />`;
 
-	beforeEach(() => {});
+	beforeEach(() => {
+		image.setUrl('');
+	});
 
 	it('Initially url should be blank', () => {
 		expect(image.getUrl()).toEqual('');
@@ -21,6 +23,7 @@ describe('image.js test', function(){
 	});
 
 	it('Template has the expected image url', () => {
+		image.setUrl(url);
 		expect(image.getThumbnailImg()).toEqual(thumbnailImg);
 	});
 
