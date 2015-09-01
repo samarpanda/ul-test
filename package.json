@@ -4,7 +4,7 @@
   "description": "UL image search google test",
   "main": "index.js",
   "scripts": {
-    "test": "karma start karma.conf-single.js"
+    "test": "gulp travis-test"
   },
   "author": "Samar Panda <samar.panda84@gmail.com> (http://samarpanda.com)",
   "license": "ISC",

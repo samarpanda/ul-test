@@ -1,5 +1,4 @@
 var gulp = require("gulp");
-var babel = require("gulp-babel");
 var sourcemaps = require("gulp-sourcemaps");
 var concat = require("gulp-concat");
 var browserSync = require("browser-sync");
@@ -9,6 +8,15 @@ var sass = require('gulp-sass');
 var babelify = require('babelify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+
+var karma = require('karma').server;
+
+gulp.task('travis-test', function(){
+	karma.start({
+		configFile: _dirname + '',
+		singleRun: true
+	});
+})
 
 gulp.task('default', ['serve'], function(){});
 
