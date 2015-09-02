@@ -4,8 +4,11 @@
   "description": "UL image search google test",
   "main": "index.js",
   "scripts": {
+    "build":"gulp build",
     "test": "gulp travis-test",
-    "start": "gulp"
+    "start": "gulp default",
+    "clean": "rm -rf dist/*",
+    "local-test": "gulp local-test"
   },
   "author": "Samar Panda <samar.panda84@gmail.com> (http://samarpanda.com)",
   "license": "ISC",
