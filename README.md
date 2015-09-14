@@ -44,7 +44,3 @@ gulp local-test
 
 - [ ] Add tests for all modules
 - [ ] Multiple browser support
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/samarpanda/ul-test/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
