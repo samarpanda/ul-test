@@ -1,5 +1,4 @@
 var gulp = require("gulp");
-var sourcemaps = require("gulp-sourcemaps");
 var concat = require("gulp-concat");
 var browserSync = require("browser-sync");
 var clean = require('gulp-clean');

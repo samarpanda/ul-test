@@ -4,8 +4,11 @@
   "description": "UL image search google test",
   "main": "index.js",
   "scripts": {
+    "build": "gulp build",
     "test": "gulp travis-test",
-    "start": "gulp"
+    "start": "gulp default",
+    "clean": "rm -rf dist/*",
+    "local-test": "gulp local-test"
   },
   "author": "Samar Panda <samar.panda84@gmail.com> (http://samarpanda.com)",
   "license": "ISC",
@@ -17,7 +20,6 @@
     "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
     "gulp-sass": "^2.0.4",
-    "gulp-sourcemaps": "^1.5.2",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.9",
     "karma-browserify": "^4.3.0",
